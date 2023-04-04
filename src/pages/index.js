@@ -1,17 +1,23 @@
-import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import React , {useState} from 'react';
 import Link from "next/link";
+import MyComponent from "@/pages/api/MyComponent";
+const Navbar = () => {
+    return (
+        <nav>
+            <div>
+                <input type="text" placeholder="Search..." />
+                <MyComponent></MyComponent>
+            </div>
+        </nav>
+    );
+};
 
-const inter = Inter({ subsets: ["latin"] });
+const IndexPage = () => {
+    return (
+        <div>
+            <Navbar />
+        </div>
+    );
+};
 
-export default function Home() {
-  return (
-    <>
-      <Link href="/about">
-        <button>This is the home page!</button>
-      </Link>
-    </>
-  );
-}
+export default IndexPage;
